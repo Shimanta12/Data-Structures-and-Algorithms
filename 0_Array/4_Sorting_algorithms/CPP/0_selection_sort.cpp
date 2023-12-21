@@ -9,7 +9,7 @@ void selection_sort(vector<int> &arr)
     {
         m = arr[i];
         min_index = i;
-        for (int j = i; j < arr.size(); j++)
+        for (int j = i + 1; j < arr.size(); j++)
         {
             if (arr[j] < m)
             {

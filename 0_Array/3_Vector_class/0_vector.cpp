@@ -27,6 +27,7 @@ int main()
     // remove element from the end.
     arr.pop_back();
 
+    // vector size using size() method
     for (int i = 0; i < arr.size(); i++)
     {
         cout << arr[i] << " ";
