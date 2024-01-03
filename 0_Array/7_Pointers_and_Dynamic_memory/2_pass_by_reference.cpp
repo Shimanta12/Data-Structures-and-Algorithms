@@ -1,26 +1,25 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 // Pass by reference using reference variable
-void apply_tax(float &amount)
+void apply_tax(int &income)
 {
     float tax = 0.10;
-    float total_tax = amount * tax;
-    cout << fixed << setprecision(2) << total_tax << endl;
-    amount -= total_tax;
+    income = ceil(income - income * tax);
 }
 
 // Pass by reference using pointer variable
-void apply_tax_2(int *amount)
+void apply_tax_2(int *income)
 {
     float tax = 0.10;
-    *amount = *amount - (*amount) * tax;
+    *income = ceil(*income - (*income) * tax);
 }
 
 int main()
 {
-    float income;
+    int income;
     cin >> income;
 
     apply_tax(income);
