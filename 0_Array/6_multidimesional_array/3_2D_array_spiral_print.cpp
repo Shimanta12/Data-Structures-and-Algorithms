@@ -1,6 +1,20 @@
 #include <iostream>
 using namespace std;
 
+/*
+Write a function that takes nxm 2D array, and it prints all array elements in a spiral order. Starts from top left corner, goes to right, proceeds in a spiral pattern until every element is visited.
+
+Sample input:
+            1  2  3  4  5
+            16 17 18 19 6
+            15 24 25 20 7
+            14 23 22 21 8
+            13 12 11 10 9
+
+Sample output: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+
+ */
+
 void spiral_print(int arr[][100], int n, int m)
 {
     int start_row = 0;
@@ -68,6 +82,14 @@ int main()
 15 24 25 20 7
 14 23 22 21 8
 13 12 11 10 9
+
+
+
+1  2  3  4
+12 13 14 5
+11 16 15 6
+10 9  8  7
+
 
 
  */

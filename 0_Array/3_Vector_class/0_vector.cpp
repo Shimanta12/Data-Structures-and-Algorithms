@@ -6,7 +6,7 @@ using namespace std;
 /*
 1. Vectors can be used to create dynamic 1D & 2D arrays.
 2. Vector's size is doubled if needed extra space.
-2. Unline array vectors are passed by value to a function, but we still can pass them by reference if need arises.
+2. Unlike array vectors are passed by value to a function, but we still can pass them by reference if need arises.
 
  */
 int main()
