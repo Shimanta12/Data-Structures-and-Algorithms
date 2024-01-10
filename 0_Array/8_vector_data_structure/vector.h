@@ -65,13 +65,14 @@ public:
             cs++;
         }
     }
-
+    //    |
+    // 1 2 3 4 5
     // removes element from a given position
     int erase(int i)
     {
         if (i >= 0 and cs > 0 and i < cs)
         {
-            for (int idx = i; i < cs - 1; idx++)
+            for (int idx = i; idx < cs - 1; idx++)
             {
                 arr[idx] = arr[idx + 1];
             }
