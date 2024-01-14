@@ -1,4 +1,6 @@
-template <typename T>
+// Generic class (templating)
+
+template <typename T> // The type of data will be provided in where this data structure is declared.
 class Vector
 {
     // Data members
@@ -118,6 +120,7 @@ public:
     }
 
     // operator overloading
+    // function is declared constant within a class when it doesn't modify any of the data members of the class. (A good practice!)
     int operator[](const int i) const
     {
         return arr[i];
