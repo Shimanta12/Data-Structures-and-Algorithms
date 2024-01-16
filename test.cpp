@@ -1,14 +1,17 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void func(int arr[][5])
-{
-    cout << sizeof(arr) << endl;
-}
+#define endl "\n"
+#define ll long long
 
 int main()
 {
-    int arr[2][5] = {0};
-    func(arr);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+    }
     return 0;
 }
