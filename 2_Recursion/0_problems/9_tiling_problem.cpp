@@ -12,8 +12,12 @@ A tile can either be placed horizonatally i.e. as a "1x4" tile or vertically i.e
 
 int num_of_ways(int n)
 {
+    if (n == 0)
+        return 0;
     if (n <= 3)
         return 1;
+    if (n == 4)
+        return 2;
     return num_of_ways(n - 1) + num_of_ways(n - 4);
 }
 

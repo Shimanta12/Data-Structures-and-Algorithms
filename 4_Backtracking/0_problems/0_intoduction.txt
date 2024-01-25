@@ -1,0 +1,16 @@
+Bakctracking:
+-> Algorithmic technique.
+-> Recursively trying to build a solution.
+-> Searching the entire search space to solve a computational problem.
+
+Problem types:
+-> Decision type (check for feasible solution)
+-> Optimisation Problem (find best solution)
+-> Enumeration Problem (find all solutions)
+
+
+Classical Problem on Bakctracking:
+-> Rat in a maze.
+-> Sudoko solver.
+-> N Queen.
+-> Knight's Tour.
