@@ -15,7 +15,7 @@ Possible variations:
 --> Count possible configuration
  */
 
-void print_chess_board(vector<vector<int>> &chessboard)
+void print_chess_board(vector<vector<int> > &chessboard)
 {
     int size = chessboard.size();
     for (int row = 0; row < size; row++)
@@ -29,7 +29,7 @@ void print_chess_board(vector<vector<int>> &chessboard)
     cout << endl;
 }
 
-bool valid_pos(int n, int row, int col, vector<vector<int>> &chessboard)
+bool valid_pos(int n, int row, int col, vector<vector<int> > &chessboard)
 {
     for (int i = 0; i < row; i++)
     {
@@ -55,7 +55,7 @@ bool valid_pos(int n, int row, int col, vector<vector<int>> &chessboard)
     return true;
 }
 
-int solve_n_queen(int n, int i, vector<vector<int>> &chessboard)
+int solve_n_queen(int n, int i, vector<vector<int> > &chessboard)
 {
     if (i == n)
     {
@@ -79,7 +79,7 @@ int main()
 {
     int n;
     cin >> n;
-    vector<vector<int>> chessboard(n, vector<int>(n, 0));
+    vector<vector<int> > chessboard(n, vector<int>(n, 0));
     int count = solve_n_queen(n, 0, chessboard);
     if (count > 0)
     {
