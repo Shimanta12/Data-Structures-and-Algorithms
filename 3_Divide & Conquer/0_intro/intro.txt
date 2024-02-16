@@ -1,0 +1,2 @@
+Divide and conquer:
+First find solution to subproblems and from solutions to subproblems, construct the solution to actual problem.

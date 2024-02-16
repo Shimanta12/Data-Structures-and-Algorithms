@@ -1,0 +1,17 @@
+Order complexity analysis
+
+Amount of time/space taken by the algorithm to run as a function of the input size
+
+way 1: Experimental analysis (comparing actual running time of algorithms)
+way 2: Theoritical analysis
+
+Big O notation:
+
+O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)
+
+Equation base analysis comes handy for recursion.
+
+In recursion time complexity is determined by multiplying the number of function calls with time taken by each function.
+
+In online judges there are some problem that need to be solved within the time limit (e.g 1s)
+In 1s online judge can process 10^8 iteration (for most of them). Lets say input size is 10^9 and we have to search for an element within the array. If we use linear search the number of iteration will be 10^9 which will take 10 second(TLE). But if we use binary search it would take 3*10^-7s which is a lot more faster.

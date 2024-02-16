@@ -2,7 +2,7 @@
 using namespace std;
 
 // Time complexity -- O(2^n)
-// Maximum utilization of the memory in other words space complexity -- O(n)
+// Space complexity -- O(n) [Maximum utilization of the memory for the call stack]
 int fibo(int n)
 {
     if (n == 1 or n == 2)

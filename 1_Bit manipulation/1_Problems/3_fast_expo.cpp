@@ -3,18 +3,18 @@ using namespace std;
 
 #define endl "\n"
 
-int fast_expo(int n, int m) // returns the value of n^m
+int fast_expo(int a, int n) // returns the value of a^m. Time complexity O(log n)
 {
     int ans = 1, last_bit;
-    while (m > 0)
+    while (n > 0)
     {
-        last_bit = (m & 1);
+        last_bit = (n & 1);
         if (last_bit == 1)
         {
-            ans *= n;
+            ans *= a;
         }
-        m = m >> 1;
-        n = n * n;
+        n = n >> 1;
+        a = a * a;
     }
     return ans;
 }

@@ -1,0 +1,27 @@
+Recursion: Recursion is a technique where the solution to a problem depends on solutions to smaller instances of the same 
+---------
+problem.
+
+Base Case: Base case is a point where the problem cannot be broken down any further and base case is the case where we 
+----------
+know the answer to the subproblem.  
+
+
+When we are dealing with recursion we see two directions:
+    ==> Towards the base case. (Top to down)
+    ==> From the base case. (Bottom to top)
+
+
+Steps for solving a problem using recursion:
+
+1. Figure out the smallest case.
+2. Always assume the subproblem can be solved.
+3. Solve the current problem assuming subproblem solution exists.
+
+All recursive problem will take up extra space because of implicit stack.
+
+Time and space complexity of recusive solutions:
+-----------------------------------------------
+
+Time complexity: No of function calls and time taken for each function calls.
+Space complexity: Maximum utilization of call stack for the max depth of function calls.

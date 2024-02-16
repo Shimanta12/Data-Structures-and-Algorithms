@@ -1,7 +1,13 @@
 /*
 Find Deplacement: Given a long route containing N,S,E,W directions, find the shortest path to reach the location.
+Print -1 if deplacement is 0;
+
 Sample input: SNNNEWE
 Sample output: NNE
+
+Sample input: SSNN
+Sample output: -1
+
             |N
             |
             |
@@ -25,51 +31,59 @@ int main()
     for (int i = 0; i < strlen(route); i++)
     {
         if (route[i] == 'S')
-            x--;
-        else if (route[i] == 'N')
-            x++;
-        else if (route[i] == 'W')
             y--;
-        else if (route[i] == 'E')
+        else if (route[i] == 'N')
             y++;
+        else if (route[i] == 'W')
+            x--;
+        else if (route[i] == 'E')
+            x++;
     }
-    char path[1000];
-    int i = 0;
-    if (x > 0)
+    if (x == 0 and y == 0)
     {
-        while (x--)
-        {
-            path[i] = 'N';
-            i++;
-        }
+        cout << -1 << endl;
     }
     else
     {
-        x = abs(x);
-        while (x--)
+
+        char path[1000];
+        int i = 0;
+        if (x > 0)
         {
-            path[i] = 'S';
-            i++;
+            while (x--)
+            {
+                path[i] = 'E';
+                i++;
+            }
         }
-    }
-    if (y > 0)
-    {
-        while (y--)
+        else
         {
-            path[i] = 'E';
-            i++;
+            x = abs(x);
+            while (x--)
+            {
+                path[i] = 'W';
+                i++;
+            }
         }
-    }
-    else
-    {
-        y = abs(y);
-        while (y--)
+        if (y > 0)
         {
-            path[i] = 'W';
-            i++;
+            while (y--)
+            {
+                path[i] = 'N';
+                i++;
+            }
         }
+        else
+        {
+            y = abs(y);
+            while (y--)
+            {
+                path[i] = 'S';
+                i++;
+            }
+        }
+        path[i] = '\0';
+        cout << path << endl;
     }
-    path[i] = '\0';
-    cout << path << endl;
     return 0;
 }

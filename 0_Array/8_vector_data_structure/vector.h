@@ -119,8 +119,8 @@ public:
         return cs == 0;
     }
 
-    // operator overloading
     // function is declared constant within a class when it doesn't modify any of the data members of the class. (A good practice!)
+    // operator overloading
     int operator[](const int i) const
     {
         return arr[i];

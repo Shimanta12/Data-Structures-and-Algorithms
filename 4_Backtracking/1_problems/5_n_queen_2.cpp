@@ -26,18 +26,19 @@ void print_chess_board(vector<vector<int>> &chessboard)
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 bool valid_pos(int n, int row, int col, vector<vector<int>> &chessboard)
 {
     for (int i = 0; i < row; i++)
     {
-        if (chessboard[i][col])
+        if (chessboard[i][col] == 1)
         {
             return false;
         }
     }
-    for (int i = row - 1, j = col - 1; i >= 0; i--, j--)
+    for (int i = row - 1, j = col - 1; i >= 0 and j >= 0; i--, j--)
     {
         if (chessboard[i][j] == 1)
         {
@@ -54,29 +55,24 @@ bool valid_pos(int n, int row, int col, vector<vector<int>> &chessboard)
     return true;
 }
 
-bool solve_n_queen(int n, int i, vector<vector<int>> &chessboard)
+int solve_n_queen(int n, int i, vector<vector<int>> &chessboard)
 {
     if (i == n)
     {
-        return true;
+        // print_chess_board(chessboard);
+        return 1;
     }
+    int ways = 0;
     for (int idx = 0; idx < n; idx++)
     {
         if (valid_pos(n, i, idx, chessboard))
         {
             chessboard[i][idx] = 1;
-            bool res = solve_n_queen(n, i + 1, chessboard);
-            if (!res)
-            {
-                chessboard[i][idx] = 0;
-            }
-            else
-            {
-                return true;
-            }
+            ways += solve_n_queen(n, i + 1, chessboard);
+            chessboard[i][idx] = 0;
         }
     }
-    return false;
+    return ways;
 }
 
 int main()
@@ -84,10 +80,10 @@ int main()
     int n;
     cin >> n;
     vector<vector<int>> chessboard(n, vector<int>(n, 0));
-    bool res = solve_n_queen(n, 0, chessboard);
-    if (res)
+    int count = solve_n_queen(n, 0, chessboard);
+    if (count > 0)
     {
-        print_chess_board(chessboard);
+        cout << count << endl;
     }
     else
     {

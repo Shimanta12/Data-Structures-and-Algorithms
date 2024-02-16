@@ -10,7 +10,7 @@ In that way the complexity would have been O(n logm) or O(m logn).
 But we have used a better approach which is known as staircase search. And this approach can only be applied if the 2D array is row wise and column wise sorted.
  */
 
-pair<int, int> staircase_search(int arr[][100], int n, int m, int key)
+pair<int, int> staircase_search(int arr[][100], int n, int m, int key) // time complexity -> O(m+n)
 {
     if (key < arr[0][0] or key > arr[n - 1][m - 1])
     {

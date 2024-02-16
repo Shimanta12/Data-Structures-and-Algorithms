@@ -14,3 +14,8 @@ Classical Problem on Bakctracking:
 -> Sudoko solver.
 -> N Queen.
 -> Knight's Tour.
+
+
+Bakctracking steps are written after the recursive function call.
+
+**** All STL container are passed to function by value. So dont forget to pass em by reference.

@@ -5,17 +5,18 @@ using namespace std;
 
 int main()
 {
-    vector<int> arr = {1, 3, 4, 30};
+    vector<int> arr = {1, 3, 4, 6};
     sort(arr.begin(), arr.end());
 
     for (int e : arr)
         cout << e << " ";
     cout << endl;
-
+    int key;
+    cin >> key;
     vector<int>::iterator low, up;
-    low = lower_bound(arr.begin(), arr.end(), 30); // O(log n)
-    up = upper_bound(arr.begin(), arr.end(), 30);  // O(log n)
-    if (low - arr.begin() == arr.size())
+    low = lower_bound(arr.begin(), arr.end(), key); // returns an iterator pointing to the first element in the range which is not less than the specified value
+    up = upper_bound(arr.begin(), arr.end(), key);  // returns an iterator pointing to the first element in the range [arr.begin(), arr.end()) which is greater than the specified value
+    if (low - arr.begin() == arr.size() || *low != key)
     {
         cout << "Element NOT Found!" << endl;
     }

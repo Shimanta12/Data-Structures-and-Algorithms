@@ -3,8 +3,8 @@ using namespace std;
 
 int main()
 {
-    // Declaring an array which is telling the compiler to allocate 100 contiguous memory block for each of marks element which are integers. 100*4 400 = bytes
-    int marks[100] = {-1}; // Declaring and initializing the array. This result as marks[0] = -1 and all the index's valuse as 0;
+    // Declaring an array which is telling the compiler to allocate 100 contiguous memory block for each of marks element which are integers. 100*4 = 400 bytes
+    int marks[100] = {-1}; // Declaring and initializing the array. This result as marks[0] = -1 and all the other index's values as 0;
     int n;
     cout << "Enter student number: ";
     cin >> n;

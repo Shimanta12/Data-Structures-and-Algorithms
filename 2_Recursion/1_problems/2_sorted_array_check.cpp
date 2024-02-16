@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+// Time and space complexity -- O(n)
 bool is_sorted(vector<int> &arr, int i, int size)
 {
     if (i == size - 1)

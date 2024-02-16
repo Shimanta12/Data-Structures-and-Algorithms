@@ -15,7 +15,7 @@ Possible variations:
 --> Count possible configuration
  */
 
-void print_chess_board(vector<vector<int> > &chessboard)
+void print_chess_board(vector<vector<int>> &chessboard)
 {
     int size = chessboard.size();
     for (int row = 0; row < size; row++)
@@ -26,14 +26,13 @@ void print_chess_board(vector<vector<int> > &chessboard)
         }
         cout << endl;
     }
-    cout << endl;
 }
 
-bool valid_pos(int n, int row, int col, vector<vector<int> > &chessboard)
+bool valid_pos(int n, int row, int col, vector<vector<int>> &chessboard)
 {
-    for (int i = 0; i < row; i++)
+    for (int i = row - 1; i >= 0; i--)
     {
-        if (chessboard[i][col] == 1)
+        if (chessboard[i][col])
         {
             return false;
         }
@@ -55,35 +54,37 @@ bool valid_pos(int n, int row, int col, vector<vector<int> > &chessboard)
     return true;
 }
 
-int solve_n_queen(int n, int i, vector<vector<int> > &chessboard)
+bool solve_n_queen(int n, int i, vector<vector<int>> &chessboard)
 {
     if (i == n)
     {
-        // print_chess_board(chessboard);
-        return 1;
+        return true;
     }
-    int ways = 0;
     for (int idx = 0; idx < n; idx++)
     {
         if (valid_pos(n, i, idx, chessboard))
         {
             chessboard[i][idx] = 1;
-            ways += solve_n_queen(n, i + 1, chessboard);
+            bool res = solve_n_queen(n, i + 1, chessboard);
+            if (res)
+            {
+                return true;
+            }
             chessboard[i][idx] = 0;
         }
     }
-    return ways;
+    return false;
 }
 
 int main()
 {
     int n;
     cin >> n;
-    vector<vector<int> > chessboard(n, vector<int>(n, 0));
-    int count = solve_n_queen(n, 0, chessboard);
-    if (count > 0)
+    vector<vector<int>> chessboard(n, vector<int>(n, 0));
+    bool res = solve_n_queen(n, 0, chessboard);
+    if (res)
     {
-        cout << count << endl;
+        print_chess_board(chessboard);
     }
     else
     {

@@ -12,7 +12,8 @@ Output: Max no of trees he can get.
 // This is a bruteforce approach. Time complexity of this approach is O(N^4)
 int max_no_of_mango_trees(char grid[][100], int n, int m)
 {
-    int no_of_mangos[4], max = 0;
+    int no_of_mangos[4] = {0};
+    int max = 0;
     for (int i = 1; i < n; i++)
     {
         for (int j = 1; j < m; j++)

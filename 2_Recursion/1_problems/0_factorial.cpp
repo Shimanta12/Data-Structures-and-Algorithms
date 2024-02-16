@@ -3,21 +3,9 @@ using namespace std;
 
 #define ll long long
 #define endl "\n"
-
-/*
-Recursion = Principle of Mathematical induction
-
-1. Figure out the smallest case
-2. Always assume the subproblem can be solved.
-3. Solve the current problem assuming subproblem solution exists.
-
- */
-
-// All recursive problem will take up extra space because of implicit stack.
-
 /*
 Time complexity -- O(n) [n number of function calls, each function call are done at a constant time]
-Space complexity -- O(n)
+Space complexity -- O(n) [maximum space utilization for the call stack]
  */
 ll factorial(int n)
 {

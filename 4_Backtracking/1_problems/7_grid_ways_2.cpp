@@ -17,20 +17,13 @@ Sample Output: 4
 
  */
 
-bool valid_cell(int i, int j, int n, int m, vector<vector<int> > &maze)
+bool valid_cell(int i, int j, int n, int m, vector<vector<int>> &maze)
 {
-    if (i >= n or j >= m)
-    {
-        return false;
-    }
-    if (maze[i][j] == 1)
-    {
-        return false;
-    }
-    return true;
+
+    return i < n and j < m and maze[i][j] == 0;
 }
 
-int grid_ways(vector<vector<int> > &maze, int i, int j, int n, int m)
+int grid_ways(vector<vector<int>> &maze, int i, int j, int n, int m)
 {
     if (i == n - 1 and j == m - 1)
     {
@@ -52,7 +45,7 @@ int main()
 {
     int n, m, c;
     cin >> n >> m;
-    vector<vector<int> > maze(n, vector<int>(m, 0));
+    vector<vector<int>> maze(n, vector<int>(m, 0));
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)

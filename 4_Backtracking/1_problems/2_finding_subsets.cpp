@@ -33,9 +33,11 @@ int main()
     vector<string> subsets;
     find_subsets(str, output, 0, 0, subsets);
     sort(subsets.begin(), subsets.end(), compare);
+    cout << endl
+         << endl;
     for (string subset : subsets)
     {
-        cout << subset << endl;
+        cout << "\"" << subset << "\"" << endl;
     }
     return 0;
 }
