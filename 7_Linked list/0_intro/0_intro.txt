@@ -1,0 +1,17 @@
+Linked list:
+-----------
+Linked list is set of nodes connected linearly in the form of a node.
+
+Unlike array/vector which occupies conitinuous memory, linked list will create memory on the fly dynamically.
+
+A node constist of two twings: the acutual data and pointer to the next node. We keep track of the fist element using a pointer variable of type node which stores the address of first element. The pointer to the next node in the last node of a linked list will be NULL denoting the end of list.
+
+There are two ways in which we can implement linked list:
+-> Functional way (The head pointer will be in main function and we will pass it to functions to do operation on the linked list)
+-> OOP way (in a class the head pointer will be store as attribute and all operation will be at the same class as methods)
+
+Things to keep in mind:
+----------------------
+-> Implementation can be tricky sometimes, carefully handle corner cases & null pointers.
+-> Improper handling can lead to segmentation faults.
+-> The reason we are creating nodes in the heap is because we want the node to  persist in the memory even if the function call is over.

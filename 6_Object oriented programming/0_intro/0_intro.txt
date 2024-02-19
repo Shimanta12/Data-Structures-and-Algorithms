@@ -1,0 +1,65 @@
+Object oriented programming:
+----------------------------
+
+-> It is a style of writing code.
+-> So far we've used functional style of writing code where for every logic we use a function.
+-> In OOP the functions are tied around object and we deal with this concept of classes and objects.
+-> Object is real life entities.
+-> These objects has certain properties/attributes and methods/functionality.
+-> Instead of storing all attributes in separate variables and define separate function, we are going to wrap all of these in a single class.
+-> Class is a blueprint that tells the compiler how to make an actual object.
+-> Object is a instance of the class that occupies memory.
+-> So classes must be defined to make object in memory.
+-> A class can have data members and member functions.
+-> Class also provide access modifiers for member. By default it's private. We can also set access modifier for members to be public and protected.
+-> We can use getter and setter to access read only and writing access to the private memeber.
+
+
+Default Methods/functions:
+-------------------------
+
+ -> Constructor
+ -> Copy Constructor
+ -> Copy assignment operator
+ -> Destructor
+ ** These methods are there in every classes by default.
+
+
+ Constructor(Method reponsible for creating an object):
+ -----------------------------------------------------
+
+ -> Constructor is a special method whose name is the same as class name.
+ -> Called automatically when an object is created.
+ -> By default it is hidden but whenever we need data at the time of creating object we can overload the constructor with parameters we need.
+ -> Memory allocation happens when constructor is called.
+ -> Constructor is called only once for each object.
+ -> Class has a special keyword known as "this". It is basically a pointer pointing at the current object.
+
+
+ Overloading = Multiple function as same name.
+
+
+ Copy constructor:
+ -----------------
+ -> Initialize an object using another object of the same class.
+
+
+ When to create user defined copy constructor?
+----------------------------------------------
+
+ ->The compiler created copy constructor works fine for most cases.
+ -> We need to define our own copy constructor only if an object has pointers to dynamically allocated objects, ie a deep copy of object is needed. When we use the default copy constructor for copying object that has dynamically allocated objects, the address are are copied instead of the acutal object. So change made from one object will affect the other one(Beacause the address is shared between them). This is shallow copy where address is copied.
+ -> Deep copy is possible only with user defined copy constructor.
+
+
+Copy assignment operator(void operator=(Class_name &x){}):
+ ------------------------
+ -> Assignment operator is called when an already Initialized object is assigned a new value from another existing object.
+ -> We also need to define our own function for copy assignment operator only if an object has pointers to dynamically allocated objects, i.e. a deep copy is needed.
+
+
+Destructor(~Class_name(){}):
+ ----------
+ -> Function that is called automatically when an object is destroyed i.e. object goes out of scope or destroyed explicitly by call to "delete".
+ -> Compiler provides a default destructor. 
+ -> User defined destructor is needed when class contains pointer to dynamically allocated objects. 
