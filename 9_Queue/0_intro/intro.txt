@@ -1,0 +1,6 @@
+Queue is a data structure that follows FIFO (First in First out)
+
+Common operations:
+-> push() / enqueue()  O(1)
+-> pop() / dequeue()    O(1)
+-> front()  O(1)

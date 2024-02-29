@@ -1,0 +1,14 @@
+Stack is data structure that follows LIFO (Last In First Out)
+
+common operation of stack:
+-> push() --- O(1)
+-> pop() --- O(1)
+-> top() --- O(1)
+
+
+Real life scenarios:
+ -> Stack of books.
+ -> Stack of plate.
+
+Computer's undo operation also follows stack like behavior.
+

@@ -1,0 +1,28 @@
+Binary tree is a hierarchical data structure that maintains hierarchy using node and edges.
+Every node in a binary tree can have atmost 2 children.
+
+Important Terms:
+-> root
+-> child
+-> parent
+-> sibling
+-> leaf
+-> ancestors
+-> descendents
+-> path
+-> depth (The depth of a node in a binary tree is the number of edges from the root node to that node. It is calculated by counting the number of edges traversed from the root node to the given node.)
+
+-> height (The height of a root node in a binary tree is defined as the number of edges from the node to the deepest leaf node. The height of the root node is therefore called the height of the tree.)
+
+-> Diameter: The larget distance between any two nodes of the tree. 
+
+
+Common operation:
+-> Creating tree
+-> searching
+-> tree traversal (preorder, inorder, postorder)
+
+Things to note:
+-> Tree problems follow a recursive structure.
+-> Fairly important topic for interviews.
+-> Mostly all problems can be solved by dividing the problem into subproblems and making recursive calls on subtrees or iteratively.
