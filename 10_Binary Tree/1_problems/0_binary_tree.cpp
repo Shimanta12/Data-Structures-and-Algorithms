@@ -134,15 +134,54 @@ void level_order(Node *root)
     }
 }
 
-int height(Node *root)
+int tree_height(Node *root)
 {
     if (!root)
     {
         return 0;
     }
-    int h1 = height(root->left);
-    int h2 = height(root->right);
+    int h1 = tree_height(root->left);
+    int h2 = tree_height(root->right);
     return max(h1, h2) + 1;
+}
+
+int height_helper(Node *root, int target, int &height)
+{
+    if (!root)
+    {
+        return 0;
+    }
+    int h1 = height_helper(root->left, target, height);
+    int h2 = height_helper(root->right, target, height);
+
+    int ans = max(h1, h2) + 1;
+    if (root->data == target)
+    {
+        height = ans;
+    }
+    return ans;
+}
+
+int find_height(Node *root, int target)
+{
+    int h = -1;
+
+    int tree_height = height_helper(root, target, h);
+    return h;
+}
+
+int find_depth(Node *root, int target)
+{
+    if (!root)
+    {
+        return -1;
+    }
+    int distance = -1;
+    if (root->data == target or (distance = find_depth(root->left, target)) >= 0 or (distance = find_depth(root->right, target)) >= 0)
+    {
+        return distance + 1;
+    }
+    return distance;
 }
 
 int diameter(Node *root) // time complexity O(n^2)
@@ -151,7 +190,7 @@ int diameter(Node *root) // time complexity O(n^2)
     {
         return 0;
     }
-    int d1 = height(root->left) + height(root->right);
+    int d1 = tree_height(root->left) + tree_height(root->right);
     int d2 = diameter(root->left);
     int d3 = diameter(root->right);
     return max(d1, max(d2, d3));
@@ -177,16 +216,27 @@ int main()
 {
     // Node *root = build_tree_preorder();
     Node *root = build_tree_level_order();
+    cout << "Pre order: ";
     pre_order(root);
     cout << endl;
+    cout << "In order: ";
     in_order(root);
     cout << endl;
+    cout << "Post order: ";
     post_order(root);
     cout << endl;
+    cout << "Level order: ";
     level_order(root);
     cout << endl;
-    cout << height(root) << endl;
+    cout << "Height of the tree: ";
+    cout << tree_height(root) << endl;
+    cout << "Height of node 2: ";
+    cout << find_height(root, 2) << endl;
+    cout << "Depth of node 7: ";
+    cout << find_depth(root, 7) << endl;
+    cout << "Diameter of the tree: ";
     cout << diameter(root) << endl;
+    cout << "Diameter of the tree(Optimal approach): ";
     cout << opti_diameter(root).second << endl;
     return 0;
 }
