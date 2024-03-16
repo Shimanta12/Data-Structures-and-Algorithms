@@ -159,7 +159,7 @@ void root_to_leaf(Node *root, vector<int> path)
 int main()
 {
     Node *root = nullptr;
-    int arr[] = {8, 3, 10, 1, 6, 14, 4, 7, 13};
+    vector<int> arr = {8, 3, 10, 1, 6, 14, 4, 7, 13};
     for (int key : arr)
     {
         root = insert(root, key);
