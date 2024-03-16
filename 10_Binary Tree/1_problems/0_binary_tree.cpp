@@ -212,6 +212,23 @@ pair<int, int> opti_diameter(Node *root) // time complexity O(n)
     return {h, d};
 }
 
+void free_tree(Node *root)
+{
+    if (!root)
+    {
+        return;
+    }
+    if (root->left != nullptr)
+    {
+        free_tree(root->left);
+    }
+    if (root->right != nullptr)
+    {
+        free_tree(root->right);
+    }
+    delete root;
+}
+
 int main()
 {
     // Node *root = build_tree_preorder();
@@ -238,6 +255,10 @@ int main()
     cout << diameter(root) << endl;
     cout << "Diameter of the tree(Optimal approach): ";
     cout << opti_diameter(root).second << endl;
+
+    // Freeing tree
+    free_tree(root);
+    root = nullptr;
     return 0;
 }
 /*

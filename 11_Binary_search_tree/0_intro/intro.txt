@@ -1,0 +1,23 @@
+Binary search tree(BST):
+-----------------------
+-> BST is a binary tree.
+-> Left subtree of a BST is a BST.
+-> Right subtree of a BST is a BST.
+-> All the Nodes in the left subtree should be <= root.
+-> All the Nodes in the right subtree should be > root.
+-> Inorder traversal of a BST will always be sorted.
+
+Advantages:
+----------
+-> Searching in BST is more efficient(cause we discard branches at each steps and maximum steps would be same as the height of the tree) than searching in a binary tree.
+-> time complexity of searching in a binary tree is O(H) where h is the height of the BST.
+-> In a skewed tree the height can be h <= node
+-> In a full BST the height can be h <= log n.
+
+
+Things to keep in mind:
+----------------------
+=> BST problems follow a recursive structure.
+=> Mostly all problems can be solved by dividing the problem into subproblems and making recursive calls on subtrees.
+=> Inorder traversal is always sorted.
+=> BST makes searching efficient.
