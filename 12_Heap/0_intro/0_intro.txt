@@ -1,0 +1,26 @@
+Heap/Priority Queue:
+-------------------
+
+There is two kinds of heap/Priority queue:
+-----------------------------------------
+-> Max heap.
+-> Min heap.
+
+Time complexity for operation on heap/Priority queue.
+----------------------------------------------------
+
+-> Insert ---- O(log n)
+-> pop max/min ---- O(log n)
+-> Get max/min ---- O(1)
+
+Use cases:
+---------
+
+-> Find top k elements from n elements.
+
+Heap?
+----
+
+-> We will visualize heap as binary tree.
+-> It has to be complete binary tree i.e. all levels in the tree except last level must have 2 children. Last level has to be filled in left to right order.
+-> It has to maintain Heap order property.
