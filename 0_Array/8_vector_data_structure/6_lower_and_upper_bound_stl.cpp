@@ -16,15 +16,22 @@ int main()
     vector<int>::iterator low, up;
     low = lower_bound(arr.begin(), arr.end(), key); // returns an iterator pointing to the first element in the range which is not less than the specified value
     up = upper_bound(arr.begin(), arr.end(), key);  // returns an iterator pointing to the first element in the range [arr.begin(), arr.end()) which is greater than the specified value
-    if (low - arr.begin() == arr.size() || *low != key)
+
+    if (low == arr.end() || *low != key)
     {
         cout << "Element NOT Found!" << endl;
     }
     else
     {
-        cout << "Lower bound at position " << low - arr.begin() << endl;    // 2
+        cout << "Lower bound at position " << low - arr.begin() << endl;
+    }
+    if (up == arr.end() || *(up - 1) != key)
+    {
+        cout << "Element NOT Found!" << endl;
+    }
+    else
+    {
         cout << "Upper bound at position " << up - arr.begin() - 1 << endl; // upper_bound returns the iterator to the next element after last occurence of the searched value. That is why we are substracting 1 to get the actual index;
     }
-
     return 0;
 }

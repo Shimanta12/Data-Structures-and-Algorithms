@@ -15,7 +15,7 @@ int main()
     it = find(arr.begin(), arr.end(), key);
     if (it != arr.end())
     {
-        cout << "Key found at " << it - arr.begin() << "th index" << endl;
+        cout << *it << " found at " << it - arr.begin() << "th index" << endl;
     }
     else
     {

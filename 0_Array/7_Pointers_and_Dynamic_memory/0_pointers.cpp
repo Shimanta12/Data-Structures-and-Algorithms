@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     int x = 10;
-    int *xp = &x; // A pointer variable that stores the address of another variable(which we are getting using address of operator '&'.
+    int *xp = &x; // A pointer variable that stores the address of another variable(which we are getting using address of operator '&').
     cout << xp << endl;
 
     cout << &xp << endl;

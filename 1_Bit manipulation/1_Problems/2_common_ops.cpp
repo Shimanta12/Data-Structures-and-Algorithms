@@ -3,6 +3,10 @@ using namespace std;
 
 #define endl "\n"
 
+// bit number stating from 0 fron the right to left;
+// bit  - 1 0 1
+// bit# - 2 1 0
+
 int get_ith_bit(int n, int i)
 {
     int mask = 1 << i;

@@ -9,14 +9,13 @@ void insertion_sort(vector<int> &arr)
     {
         current = arr[i];
         // finding the right index for the current element in the sorted part.
-        for (j = i; j > 0; j--)
+        int j = i - 1;
+        while (j >= 0 and arr[j] > current)
         {
-            if (current < arr[j - 1])
-                arr[j] = arr[j - 1];
-            else
-                break;
+            arr[j + 1] = arr[j];
+            j--;
         }
-        arr[j] = current;
+        arr[j + 1] = current;
     }
 }
 
