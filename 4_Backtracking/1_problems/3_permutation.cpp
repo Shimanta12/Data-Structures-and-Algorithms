@@ -1,36 +1,29 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <cstring>
+#include <bits/stdc++.h>
 using namespace std;
 
-void permuatation(char *str, char *output, int i, int j, int len, vector<string> &permuatations)
+void permutations(string str, int i, int &count)
 {
-    if (j == len)
+    if (i == str.length())
     {
-        output[j] = '\0';
-        permuatations.push_back(output);
+        count++;
+        cout << str << endl;
         return;
     }
-    for (int idx = i; idx < len; idx++)
+    for (int idx = i; idx < str.length(); idx++)
     {
-        swap(str[idx], str[i]);
-        output[j] = str[i];
-        permuatation(str, output, i + 1, j + 1, len, permuatations);
-        swap(str[idx], str[i]);
+        swap(str[i], str[idx]);
+        permutations(str, i + 1, count);
+        swap(str[i], str[idx]);
     }
 }
 
 int main()
 {
-    char str[100], output[100];
+    string str;
     cin >> str;
-    vector<string> permutations;
-    permuatation(str, output, 0, 0, strlen(str), permutations);
-    for (string p : permutations)
-    {
-        cout << p << " ";
-    }
-    cout << endl;
+    int count = 0;
+    permutations(str, 0, count);
+    cout << count << endl;
+
     return 0;
 }

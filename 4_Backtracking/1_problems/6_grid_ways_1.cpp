@@ -26,6 +26,13 @@ int grid_ways(int i, int j, int n, int m)
     return ans;
 }
 
+long long factorial(int n)
+{
+    if (n == 0)
+        return 1;
+    return n * factorial(n - 1);
+}
+
 /*
 Grid ways using mathematical formula
 if we have n rows, then we can go down to the bottom of the grid using n-1[n-1's D] move. And if we have m columns, then we can go right until the boundary of the grid using m-1[m-1's R] moves. So the path is nothing but the permutation of (n-1 + m-1) discarding the duplicates. So the formula would be ways = ((n-1 + m-1)!) / ((n-1)! * (m-1)!)
@@ -35,6 +42,10 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-    cout << grid_ways(0, 0, n, m);
+    int ans = (factorial(n - 1 + m - 1)) / (factorial(n - 1) * factorial(m - 1));
+    cout << ans << endl;
+
+    cout << grid_ways(0, 0, n, m) << endl;
+
     return 0;
 }

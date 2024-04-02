@@ -19,10 +19,10 @@ Sample Input:
 Sample Output:
 DDRDRR DRDDRR
  */
-vector<vector<int> > d = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+vector<vector<int>> d = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 string dir = "UDLR";
 
-void solve(vector<vector<int> > &m, int i, int j, int n, vector<string> &paths, string path)
+void solve(vector<vector<int>> &m, int i, int j, int n, vector<string> &paths, string path)
 {
     if (i == n - 1 and j == n - 1)
     {
@@ -37,14 +37,13 @@ void solve(vector<vector<int> > &m, int i, int j, int n, vector<string> &paths, 
         if (x >= 0 and x < n and y >= 0 and y < n and m[x][y] == 1)
         {
             m[x][y] = 0;
-            solve(m, x, y, n, paths, path += dir[idx]);
+            solve(m, x, y, n, paths, path + dir[idx]);
             m[x][y] = 1;
-            path.pop_back();
         }
     }
 }
 
-vector<string> findPath(vector<vector<int> > &m, int n)
+vector<string> findPath(vector<vector<int>> &m, int n)
 {
     vector<string> paths;
     if (m[0][0] == 0 || m[n - 1][n - 1] == 0)
@@ -63,7 +62,7 @@ int main()
 {
     int n;
     cin >> n;
-    vector<vector<int> > m(n, vector<int>(n));
+    vector<vector<int>> m(n, vector<int>(n));
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)

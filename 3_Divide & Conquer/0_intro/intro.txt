@@ -1,2 +1,2 @@
 Divide and conquer:
-First find solution to subproblems and from solutions to subproblems, construct the solution to actual problem.
+First find solution to subproblems and from the solutions, construct the solution to actual problem.

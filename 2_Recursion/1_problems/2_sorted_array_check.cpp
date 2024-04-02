@@ -7,7 +7,7 @@ bool is_sorted(vector<int> &arr, int i, int size)
 {
     if (i == size - 1)
         return true;
-    return arr[i] < arr[i + 1] && is_sorted(arr, i + 1, size);
+    return arr[i] <= arr[i + 1] && is_sorted(arr, i + 1, size);
 }
 
 int main()

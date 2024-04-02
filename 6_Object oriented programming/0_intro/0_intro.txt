@@ -23,7 +23,7 @@ Default Methods/functions:
  -> Copy assignment operator
  -> Destructor
  ** These methods are there in every classes by default.
-
+*** Constructor(Includes copy constructor and overloaded constructor as well) method will only get called once.
 
  Constructor(Method reponsible for creating an object):
  -----------------------------------------------------
@@ -48,7 +48,7 @@ Default Methods/functions:
 ----------------------------------------------
 
  ->The compiler created copy constructor works fine for most cases.
- -> We need to define our own copy constructor only if an object has pointers to dynamically allocated objects, ie a deep copy of object is needed. When we use the default copy constructor for copying object that has dynamically allocated objects, the address are are copied instead of the acutal object. So change made from one object will affect the other one(Beacause the address is shared between them). This is shallow copy where address is copied.
+ -> We need to define our own copy constructor only if an object has pointers to dynamically allocated objects, ie a deep copy of object is needed. When we use the default copy constructor for copying object that has dynamically allocated objects, the address is copied instead of the acutal object. So changes made from one object will affect the other one(Beacause the address is shared between them). This is shallow copy where address is copied.
  -> Deep copy is possible only with user defined copy constructor.
 
 

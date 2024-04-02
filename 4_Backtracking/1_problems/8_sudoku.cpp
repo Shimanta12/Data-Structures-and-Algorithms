@@ -97,7 +97,7 @@ int solve(vector<vector<int> > &sudoku_board, int i, int j, int n)
 
 int main()
 {
-    vector<vector<int> > sudoku_board(9, vector<int>(9, 0));
+    vector<vector<int> > sudoku_board(9, vector<int>(9));
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
