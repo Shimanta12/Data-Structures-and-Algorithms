@@ -1,84 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+using ll = long long;
+
 #define endl "\n"
-#define ll long long
-#define F first
-#define S second
+
+using vi = vector<int>;
+#define pb push_back
+#define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
+
+using pi = pair<int, int>;
+#define f first
+#define s second
+#define mp make_pair
 
 int d[8][2] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}};
 
 const int MOD = 1000000007;
 const int INF = 2e9;
 
-
-bool is_sorted(int arr[], int n)
-{
-    for (int i = 0; i < n - 1; i++)
-    {
-        if (arr[i] > arr[i + 1])
-        {
-            return false;
-        }
-    }
-    return true;
-}
+#define dbg(v) \
+    cout << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
 
 void solve(int tc)
 {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
 
-    int arr[n];
+    vi freq(101, 0);
 
+    int x;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> x;
+        freq[x]++;
     }
-
-    if (is_sorted(arr, n))
+    for (int elem : freq)
     {
-        cout << "YES" << endl;
-    }
-    else
-    {
-        bool flag = false;
-
-        while (true)
+        if (elem >= k)
         {
-            bool swapped = false;
-            for (int i = 1; i < n - 1; i++)
-            {
-                if (arr[i - 1] < arr[i] && arr[i] > arr[i + 1])
-                {
-                    swap(arr[i], arr[i + 1]);
-                    swapped = true;
-                }
-                if (is_sorted(arr, n))
-                {
-                    flag = true;
-                    break;
-                }
-            }
-            if (flag)
-            {
-                break;
-            }
-            if (!swapped)
-            {
-                flag = false;
-                break;
-            }
-        }
-        if (flag)
-        {
-            cout << "YES" << endl;
-        }
-        else
-        {
-            cout << "NO" << endl;
+            cout << k - 1 << endl;
+            return;
         }
     }
+    cout << n << endl;
 }
 
 int main()
