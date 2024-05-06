@@ -1,3 +1,8 @@
+/* ------------------------------------------------------------------------
+  |                                                                        |
+  |  Solved without || with the help of editorial by "Emon Barua Shimanto" |
+  |                                                                        |
+   ------------------------------------------------------------------------*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -5,46 +10,45 @@ using ll = long long;
 
 #define endl "\n"
 
-using vi = vector<int>;
-#define pb push_back
-#define all(x) begin(x), end(x)
-#define sz(x) (int)(x).size()
+// using vi = vector<int>;
+// #define pb push_back
+// #define all(x) begin(x), end(x)
+// #define sz(x) (int)(x).size()
 
-using pi = pair<int, int>;
-#define f first
-#define s second
-#define mp make_pair
+// using pi = pair<int, int>;
+// #define f first
+// #define s second
+// #define mp make_pair
 
-int d[8][2] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}};
+// int d[8][2] = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}, {-1, -1}, {-1, 1}, {1, 1}, {1, -1}};
 
-const int MOD = 1000000007;
-const int INF = 2e9;
+// const int MOD = 1000000007;
+// const int INF = 2e9;
 
-#define dbg(v) \
-    cout << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
+// #define dbg(v) \
+//     cout << "Line(" << __LINE__ << ") -> " << #v << " = " << (v) << endl;
+
+int n, arr[100];
 
 void solve(int tc)
 {
-    int n, k;
-    cin >> n >> k;
-
-    vi freq(101, 0);
-
-    int x;
+    cin >> n;
     for (int i = 0; i < n; i++)
     {
-        cin >> x;
-        freq[x]++;
+        cin >> arr[i];
     }
-    for (int elem : freq)
+    for (int i = 0; i < n - 1; i++)
     {
-        if (elem >= k)
+        for (int j = i + 1; j < n; j++)
         {
-            cout << k - 1 << endl;
-            return;
+            if (__gcd(arr[i], arr[j]) <= 2)
+            {
+                cout << "YES" << endl;
+                return;
+            }
         }
     }
-    cout << n << endl;
+    cout << "NO" << endl;
 }
 
 int main()

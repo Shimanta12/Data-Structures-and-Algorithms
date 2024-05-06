@@ -9,6 +9,7 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "cmath": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "ratio": "cpp"
     }
 }
